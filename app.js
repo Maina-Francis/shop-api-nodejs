@@ -1,10 +1,9 @@
 const express = require("express"); //import express from express
 const app = express(); //spin up express
 
-app.use((req, res, next) => {
-  res.status(200).json({
-    message: "It works!",
-  });
-});
+//products routes
+const productRoutes = require("./api/routes/products");
+
+app.use("/products", productRoutes);
 
 module.exports = app;
